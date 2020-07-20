@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .foto {
+            display: flex;
+            flex-direction: column; /*imagens uma em baixo da outra em coluna*/
+            height: 300px;
+            width: 300px;
+        }
+        .foto [class*="corte"]{
+            height: 100px; 
+            width: 450px; /* o segredo ta no tamanho da largura, vai ter que ir mudando o valor de acordo com a iamgem*/
+            object-fit: cover;
+            transition: all 1s;
+        }
+        .foto .corte1{
+            object-position: top;
+        }
+        .foto .corte3{
+            object-position: bottom;
+        }
+        .foto:hover .corte1{
+            transform: translateX(-50px);
+        }
+        .foto:hover .corte2{
+            padding: 10px 0px;
+        }
+        .foto:hover .corte3{
+            transform: translateX(50px);
+        }
+    </style>
+</head>
+<body>
+    <!-- .foto>img.corte$*3 (atalho para o codigo abaixo)-->
+    <div class="foto">
+        <img src="img/img1.jpg" alt="" class="corte1">
+        <img src="img/img1.jpg" alt="" class="corte2">
+        <img src="img/img1.jpg" alt="" class="corte3">
+    </div>
+
+</body>
+</html>
